@@ -56,14 +56,7 @@
     color: #ffffff;
 }
 -->
-#header .centerish {
-  background-color: #004488;
-    color: #ffffff;
-    position: absolute;
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
 
 #signup{
     min-height: 100vh;
