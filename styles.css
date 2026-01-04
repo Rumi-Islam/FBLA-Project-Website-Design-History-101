@@ -50,11 +50,18 @@
     font-size: 16px;
     transition: 150ms ease;
 }
+<!--
 #header .btn:hover {
     background-color: #004488;
     color: #ffffff;
 }
-
+-->
+#header .centerish {
+  background-color: #004488;
+    color: #ffffff;
+    position: absolute;
+    top: 50%; 
+}
 
 #signup{
     min-height: 100vh;
