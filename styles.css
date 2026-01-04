@@ -50,10 +50,12 @@
     font-size: 16px;
     transition: 150ms ease;
 
-    position: absolute;
+   <!--
+       position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+-->
 }
 #header .btn:hover {
     background-color: #004488;
