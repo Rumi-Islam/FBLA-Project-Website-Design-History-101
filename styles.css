@@ -49,6 +49,8 @@
     cursor: pointer;
     font-size: 16px;
     transition: 150ms ease;
+
+    transform: translate(-50%, -50%);
 }
 #header .btn:hover {
     background-color: #004488;
