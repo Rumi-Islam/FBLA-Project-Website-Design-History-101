@@ -211,7 +211,7 @@
 }
 
 #aboutbody{
-	background-image: linear-gradient(rgba(0,77,120,0.67),rgba(0,55,100,0.67),rgba(0,13,77,0.88)), url(images/EiffelTower_bg.jpg);
+	background-image: linear-gradient(rgba(0,77,120,0.67),rgba(0,55,100,0.67),rgba(0,13,77,0.88)), url(images/EiffelTower.jpg);
 	display: flex;
 	flex-direction: column; /* Stacks items vertically */
     align-items: left;    /* Centers items horizontally */
