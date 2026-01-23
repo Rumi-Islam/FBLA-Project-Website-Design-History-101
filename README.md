@@ -5,6 +5,6 @@ This website is still under development, so please be mindful of any potential c
 
 In the homepage, you can see the calender. The calender holds the dates and times of when people will have a digital lecture, along with a link to our discord server at the bottom.
 
-We have resources and student resources tabs. What they mean is that the "resources" tab is our own offically posted resources, andthe "student resources" tab is the resources other users create.
+We have resources and student resources tabs. What they mean is that the "resources" tab is our own offically posted resources, and the "student resources" tab is the resources other users create.
 
 Have fun, and get those 5s!
