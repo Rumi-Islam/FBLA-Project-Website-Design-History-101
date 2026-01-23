@@ -175,21 +175,39 @@
 	color: #f06272;
 }
 
-.body {
+.body{
 	width: 100%;
 	min-height: 100vh;
-	background-image: linear-gradient(rgba(0,77,33,0.67),rgba(0,77,33,0.67),rgba(0,13,77,0.88)), url(images/plant.png);
 	background-size: cover;
 	background-position: center;
 
 	padding: 20px 8%;
 
+
+	width: 100%;
+	min-height: 100vh;
+}
+#mainbody{
+	background-image: linear-gradient(rgba(0,77,33,0.67),rgba(0,77,33,0.67),rgba(0,13,77,0.88)), url(images/plant.png);
 	display: flex;
 	flex-direction: column; /* Stacks items vertically */
     align-items: center;    /* Centers items horizontally */
     justify-content: flex-start; /* Keeps content starting from the top */
-	width: 100%;
-	min-height: 100vh;
+}
+#resourcesbody{
+	background-image: linear-gradient(rgba(0,77,120,0.67),rgba(0,55,100,0.67),rgba(0,13,77,0.88)), url(images/EiffelTower.jpg);
+	display: flex;
+	flex-direction: column; /* Stacks items vertically */
+    align-items: left;    /* Centers items horizontally */
+    justify-content: flex-start; /* Keeps content starting from the top */
+}
+
+.body h1{
+	color: white;
+	font-size: 40px;
+}
+.body h2{
+	color: white;
 }
 
 .body .calendar-container {
