@@ -202,6 +202,14 @@
     justify-content: flex-start; /* Keeps content starting from the top */
 }
 
+#aboutbody{
+	background-image: linear-gradient(rgba(0,77,120,0.67),rgba(0,55,100,0.67),rgba(0,13,77,0.88)), url(images/borobudur_bg.jpg);
+	display: flex;
+	flex-direction: column; /* Stacks items vertically */
+    align-items: left;    /* Centers items horizontally */
+    justify-content: flex-start; /* Keeps content starting from the top */
+}
+
 .body h1{
 	color: white;
 	font-size: 40px;
@@ -231,64 +239,4 @@
 }
 .body a:hover{
 	text-decoration: underline;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border: 2px dashed #cbd5e1;
-    border-radius: 16px;
-    background: #ffffff;
-    width: 320px;
-    margin: 50px auto;
-    font-family: sans-serif;
-    transition: all 0.3s ease;
-}
-
-/* This makes the whole upper area clickable */
-.drop-zone {
-    width: 100%;
-    padding: 40px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #64748b;
-}
-
-.drop-zone svg {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-    color: #3b82f6;
-}
-
-/* Hide the input but keep it functional */
-#file {
-    display: none;
-}
-
-button {
-    margin-top: 20px;
-    width: 100%;
-    background: #3b82f6;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #2563eb;
-}
-
-/* Visual feedback when dragging over (Optional) */
-form:hover {
-    border-color: #3b82f6;
-    background-color: #f0f7ff;
 }
