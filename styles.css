@@ -207,7 +207,7 @@
 	flex-direction: column; /* Stacks items vertically */
     align-items: left;    /* Centers items horizontally */
     justify-content: flex-start; /* Keeps content starting from the top */
-	font-family: 'Calibri';
+	font-family: 'calibri';
 }
 
 #aboutbody{
@@ -216,6 +216,7 @@
 	flex-direction: column; /* Stacks items vertically */
     align-items: left;    /* Centers items horizontally */
     justify-content: flex-start; /* Keeps content starting from the top */
+	font-family: 'calibri';
 }
 
 .body h1{
