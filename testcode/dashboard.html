@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | History</title>
+    <link rel="stylesheet" href="styledash.css">
+</head>
+<body>
+    <nav class="class-switcher">
+        <div class="logo">APeerNotes</div>
+        <div class="class-tabs">
+            <button class="tab active">History</button>
+            <button class="tab">Calculus</button>
+            <button class="tab">Add Class +</button>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <header>
+            <h1>World History II</h1>
+        </header>
+
+        <section class="stats-grid">
+            <div class="card">
+                <h3>Cumulative Avg</h3>
+                <p class="stat-number">88.5%</p>
+            </div>
+            <div class="card">
+                <h3>Last 5 Quizzes</h3>
+                <p class="stat-number highlight">92.4%</p>
+            </div>
+            <div class="card">
+                <h3>Most Recent</h3>
+                <p class="stat-number">95%</p>
+            </div>
+        </section>
+
+        <div class="dashboard-row">
+            <div class="content-panel">
+                <h2>Improvement Over Time</h2>
+                <div class="graph-box">
+                    <div class="bar" style="height: 65%;"><span>Q1</span></div>
+                    <div class="bar" style="height: 72%;"><span>Q2</span></div>
+                    <div class="bar" style="height: 70%;"><span>Q3</span></div>
+                    <div class="bar" style="height: 85%;"><span>Q4</span></div>
+                    <div class="bar" style="height: 82%;"><span>Q5</span></div>
+                    <div class="bar current-bar" style="height: 95%;"><span>Q6</span></div>
+                </div>
+            </div>
+
+            <div class="content-panel">
+                <h2>Mastery Growth</h2>
+                <div class="progress-group">
+                    <label>First Grade (Baseline): <strong>65%</strong></label>
+                    <div class="progress-bar"><div class="fill baseline" style="width: 65%;"></div></div>
+                </div>
+                <div class="progress-group">
+                    <label>Current Mastery: <strong>95%</strong></label>
+                    <div class="progress-bar"><div class="fill current" style="width: 95%;"></div></div>
+                </div>
+                <div class="improvement-badge">
+                    30% Total Improvement
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

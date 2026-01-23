@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.class-switcher{
+    background-color: #001388;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.class-tabs .tab{
+    background: none;
+    border: none;
+    color: #bdc3c7;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.class-tabs .tab.active{
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid #3498db;
+}
+
+.main-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.stats-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card{
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card h3{
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    text-transform: uppercase;
+}
+
+.stat-number{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #001388;
+    margin-top: 0.5rem;
+}
+
+.stat-number.highlight{
+    color: #2ecc71;
+}
+
+.dashboard-row{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
+}
+
+.content-panel{
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.content-panel h2{
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #001388;
+}
+
+.graph-box{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 200px;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.bar{
+    width: 40px;
+    background-color: #3498db;
+    position: relative;
+    border-radius: 4px 4px 0 0;
+}
+
+.bar.current-bar{
+    background-color: #2ecc71;
+}
+
+.bar span{
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+.progress-group{
+    margin-bottom: 1.5rem;
+}
+
+.progress-bar{
+    height: 15px;
+    background: #ecf0f1;
+    border-radius: 10px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.fill{
+    height: 100%;
+}
+
+.fill.baseline{
+    background: #95a5a6;
+}
+.fill.current{
+    background: #2ecc71;
+}
+
+.improvement-badge{
+    background: #e8f8f5;
+    color: #16a085;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+}
