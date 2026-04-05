@@ -8,6 +8,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+
         <div className="container" id="header">
           <nav>
             <Link href="/">
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
             </ul>
           </nav>
         </div>
+        
         {children}
       </body>
     </html>

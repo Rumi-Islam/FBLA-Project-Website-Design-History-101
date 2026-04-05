@@ -32,11 +32,36 @@ export default function SignupPage() {
     return errs.length === 0;
   };
 
-  const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
+    
     if (validate()) {
-      console.log("Form is valid! Sending to database...", formData);
-      // Here is where you'd call your API
+      try {
+        // This tells the browser to send the data to your API folder
+        const res = await fetch('/api/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: formData.username,
+            email: formData.email,
+            password: formData.password
+          }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          alert("Account created successfully!");
+          // This sends the user to the login page after they succeed
+          window.location.href = '/login'; 
+        } else {
+          // If Prisma or Supabase returns an error (like "Email taken")
+          setErrors([data.error || "Signup failed"]);
+        }
+      } catch (error) {
+        console.error("Connection error:", error);
+        setErrors(["Could not connect to the database. Check your internet or terminal."]);
+      }
     }
   };
 

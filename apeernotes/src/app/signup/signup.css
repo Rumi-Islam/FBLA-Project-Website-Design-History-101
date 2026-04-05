@@ -1,38 +1,3 @@
-/* --- UNIVERSAL RESET & BODY --- */
-.body {
-    width: 100%;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    padding: 20px 8%;
-}
-
-.body h1 {
-    color: white;
-    font-size: 40px;
-}
-
-.body h2 {
-    color: white;
-}
-
-/* --- PAGE BACKGROUNDS --- */
-#mainbody {
-    background-image: linear-gradient(rgba(0,77,33,0.67),rgba(0,77,33,0.67),rgba(0,13,77,0.88)), url(/images/plant.png);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-#resourcesbody, #profilebody, #aboutbody {
-    background-image: linear-gradient(rgba(0,77,120,0.67),rgba(0,55,100,0.67),rgba(0,13,77,0.88)), url(/images/EiffelTower.jpg);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Changed 'left' to 'flex-start' (standard CSS) */
-    justify-content: flex-start;
-    font-family: 'calibri', sans-serif;
-}
 
 /* --- 1. THE NO-SCROLL FIX --- */
 #signup-container {
