@@ -1,3 +1,4 @@
+console.log("this is route line 1")
 import { PrismaClient } from '@prisma/client';
 import { NextResponse } from 'next/server';
 
@@ -5,6 +6,7 @@ const prisma = new PrismaClient();
 
 export async function POST(request) {
   try {
+    console.log("HERE HERE HERE HERE HERE");
     const { username, email, password } = await request.json();
 
     const newUser = await prisma.user.create({
