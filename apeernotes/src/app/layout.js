@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
                 {isOpen && (
                   <div className="dropdown-menu">
                     <Link href="/studentresources" className="dropdown-item">Student Resources</Link>
-                    <Link href="/resources" className="dropdown-item">Official Resources</Link>
+                    <Link href="/officialresources" className="dropdown-item">Official Resources</Link>
                   </div>
                 )}
               </li>
