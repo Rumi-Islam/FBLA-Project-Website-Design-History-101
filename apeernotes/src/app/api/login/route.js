@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { NextResponse } from 'next/server';
+import { cookies } from 'next/headers'; 
 import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();
@@ -13,28 +14,29 @@ export async function POST(request) {
       where: { email: email },
     });
 
-    // 2. If user doesn't exist, stop here
     if (!user) {
-      return NextResponse.json({ error: "Invalid email or password" }, { status: 401 });
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
-    // 3. Compare the typed password with the hashed password in the DB
+    // 2. Check if the password is correct
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!isPasswordValid) {
-      return NextResponse.json({ error: "Invalid email or password" }, { status: 401 });
+      return NextResponse.json({ error: "Invalid password" }, { status: 401 });
     }
 
-    // 4. Success! 
-		
-    console.log("success?");
-    return NextResponse.json({
-      message: "Login successful", 
-      user: { username: user.username, email: user.email } 
-    }, { status: 200 });
+    // 3. SET THE COOKIE (The missing link!)
+    const cookieStore = await cookies();
+    cookieStore.set('userId', user.id.toString(), {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 60 * 60 * 24 * 7, // 1 week
+      path: '/',
+    });
 
+    return NextResponse.json({ message: "Login successful" }, { status: 200 });
   } catch (error) {
     console.error("Login Error:", error);
-    return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

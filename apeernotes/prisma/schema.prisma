@@ -9,13 +9,23 @@ datasource db {
 }
 
 model User {
-  id               Int      @id @default(autoincrement())
-  username         String   @unique
-  email            String   @unique
+  id               Int        @id @default(autoincrement())
+  username         String     @unique
+  email            String     @unique
   password         String
-  createdAt        DateTime @default(now())
+  createdAt        DateTime   @default(now())
   
-  // Add these two lines:
-  lastUnitAccessed String?  // The "?" means it starts as empty (null)
-  lastUnitLink     String?  // This stores the URL to the unit
+  // This tells Prisma a User can have multiple Activity records
+  history          Activity[] 
+}
+
+model Activity {
+  id        Int      @id @default(autoincrement())
+  title     String   // e.g., "Unit 1: The Silk Roads"
+  link      String   // e.g., "/resources/unit1"
+  createdAt DateTime @default(now())
+
+  // This links the activity back to the specific User
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
 }
