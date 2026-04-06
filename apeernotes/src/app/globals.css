@@ -196,7 +196,9 @@ html, body {
 }
 
 #dashboardbody {
-  background-color: #4444bb;
+  /* Using 'background' shorthand clears out any images from other rules */
+  background: #4444bb; 
+  min-height: calc(100vh - 78.1719px);
 }
 
 #mainbody, #resourcesbody, #profilebody, #aboutbody, #dashboardbody {
