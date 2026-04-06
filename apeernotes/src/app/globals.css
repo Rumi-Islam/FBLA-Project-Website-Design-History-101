@@ -12,23 +12,32 @@ html, body {
   padding: 0;
   overflow-x: hidden; /* Prevents side-scrolling */
 }
+#header {
+  /* Forces the bar to stay at the very top and very edges */
+  position: fixed; /* Changed from sticky to fixed to test if it snaps to edges */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw; /* 100% of the Viewport Width */
+  
+  height: 70px; /* Give it a set height so we can offset the body */
+  background-color: #5566dd;
+  z-index: 1000;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; 
+  margin: 0;
+}
 
-#header{
-	width: 100%;
-	padding: 10px 4%;
-	align-items: center;
-	background-color: #5566dd;
-	position: -webkit-sticky; /* For Safari */
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Keeps header on top */
+#header nav {
+  width: 92%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-#header nav{
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content:space-between;
-}
+
 #header .logo{
 	width: 80px;
 	height: auto;
@@ -37,12 +46,11 @@ html, body {
 
 #header nav ul {
   list-style: none;
-  width: 100%;
-  display: flex;            /* Makes it a row */
-  align-items: center;      /* Centers everything vertically with the logo */
-  justify-content: flex-end; /* Pushes buttons to the right */
-  padding-right: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   margin: 0;
+  padding-right: 60px; /* Ensures buttons aren't pushed left */
 }
 #header nav ul li {
   display: flex;            /* Keeps the button inside the LI centered */
@@ -150,6 +158,8 @@ html, body {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 40px;
+  width: 100%; 
+  box-sizing: border-box; /* CRITICAL: This keeps padding INSIDE the 100% */
 }
 
 .card-container {
@@ -198,12 +208,12 @@ html, body {
 #dashboardbody {
   /* Using 'background' shorthand clears out any images from other rules */
   background: #4444bb; 
-  min-height: calc(100vh - 78.1719px);
 }
 
 #mainbody, #resourcesbody, #profilebody, #aboutbody, #dashboardbody {
     /* Subtract the header height (approx 60px) from the viewport */
-    min-height: calc(100vh - 78.1719px); 
+    margin-top: 70px;
+    min-height: calc(100vh - 70px); 
     width: 100%;
     /* ... keep your other background settings ... */
     display: flex;
@@ -215,4 +225,44 @@ html, body {
     background-position: center;  /* Centers the image */
     background-repeat: no-repeat;
     background-attachment: fixed; /* Keeps bg from scrolling if page is long */
+}
+
+/* --- RESOURCES PAGE STYLING --- */
+
+/* Fixes the black text for headers */
+#resourcesbody h1, 
+#resourcesbody h2, 
+#resourcesbody h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Styles the Resource Links */
+#resourcesbody a {
+    color: #88bbff; /* Light blue color to stand out against the background */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+/* This prevents the "Purple" visited color and forces it to stay white/blue */
+#resourcesbody a:visited {
+    color: #88bbff; 
+}
+
+/* Hover effect for links */
+#resourcesbody a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Makes list bullets white so they don't disappear */
+#resourcesbody ul {
+    color: #ffffff;
+    list-style-position: inside;
+    margin-bottom: 20px;
+}
+
+#resourcesbody li {
+    margin: 5px 0;
 }

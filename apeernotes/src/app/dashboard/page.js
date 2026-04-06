@@ -1,12 +1,12 @@
 export const dynamic = 'force-dynamic';
 
 import DashboardCard from '../../components/DashboardCard';
+import DashboardUpload from '../../components/DashboardUpload'; // Import your new upload button
 import prisma from '../../../lib/prisma';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 export default async function DashboardPage() {
-  // 1. Authenticate the user via cookies
   const cookieStore = await cookies();
   const userIdString = cookieStore.get('userId')?.value;
   
@@ -16,23 +16,26 @@ export default async function DashboardPage() {
 
   const userId = parseInt(userIdString);
 
-  // 2. Fetch the user and their 3 most recent activities
+  // 1. Fetch user + 3 history items + ALL their uploaded files
   const user = await prisma.user.findUnique({
     where: { id: userId },
     include: {
       history: {
-        orderBy: { createdAt: 'desc' }, // Get newest first
-        take: 3,                       // Limit to exactly 3
+        orderBy: { createdAt: 'desc' },
+        take: 3,
+      },
+      uploads: {
+        orderBy: { createdAt: 'desc' }, // Newest uploads first
       }
     }
   });
 
-  // 3. Safety check if user was deleted but cookie remained
   if (!user) {
     redirect('/login');
   }
 
   const recentActivities = user.history || [];
+  const myUploads = user.uploads || [];
 
   return (
     <div id="dashboardbody" className="dashboard-container">
@@ -41,28 +44,42 @@ export default async function DashboardPage() {
       </h1>
 
       <div className="dashboard-grid">
-        {/* 4. Loop through the activities. React handles 0, 1, 2, or 3 cards automatically. */}
+        {/* 2. THE UPLOAD BUTTON CARD (Always visible) */}
+        <DashboardUpload />
+
+        {/* 3. RECENT ACTIVITY CARDS (Max 3) */}
         {recentActivities.map((item) => (
           <DashboardCard 
-            key={item.id}
+            key={`history-${item.id}`}
             title="Continue Learning" 
-            description={item.title} // Shows the title of the specific resource clicked
-            link={item.link}          // Links back to that specific PDF/Video
+            description={item.title}
+            link={item.link}
             icon="⏳"
           />
         ))}
 
-        {/* 5. Fallback if the user is brand new with no history */}
-        {recentActivities.length === 0 && (
+        {/* 4. USER UPLOAD CARDS */}
+        {myUploads.map((file) => (
+          <DashboardCard 
+            key={`upload-${file.id}`}
+            title="My Upload" 
+            description={file.fileName}
+            link={file.fileUrl} // This is the link to the cloud file
+            icon={file.fileType === 'pdf' ? "📄" : "🎥"}
+          />
+        ))}
+
+        {/* 5. Fallback if they have NO history and NO uploads */}
+        {recentActivities.length === 0 && myUploads.length === 0 && (
           <DashboardCard 
             title="Start Your Journey" 
-            description="You haven't viewed any units yet. Jump into the resources!"
+            description="Explore resources or upload your own notes to see them here!"
             link="/resources"
             icon="🚀"
           />
         )}
         
-        {/* 6. Static card that is always there */}
+        {/* 6. Static link to resources */}
         <DashboardCard 
           title="Browse All Units" 
           description="See the full list of AP World history resources."
