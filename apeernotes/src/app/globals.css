@@ -155,7 +155,7 @@ html, body {
 
 #mainbody, #resourcesbody, #profilebody, #aboutbody {
     /* Subtract the header height (approx 60px) from the viewport */
-    min-height: calc(100vh - 60px); 
+    min-height: calc(100vh - 78.1719px); 
     width: 100%;
     /* ... keep your other background settings ... */
     display: flex;
