@@ -143,6 +143,48 @@ html, body {
     margin: 0 auto;        /* Forces it to stay centered */
 }
 
+/*The interactable cards, in the dashboard*/
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.card-container {
+  background: white;
+  border: 1px solid #e1e4e8;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  height: 100%;
+}
+
+/* The "Hover" effect makes it feel interactive */
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-color: #0070f3;
+}
+
+.card-title {
+  margin: 10px 0 5px 0;
+  font-size: 1.2rem;
+  color: #1a1a1a;
+}
+
+.card-description {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.card-anchor {
+  text-decoration: none;
+}
+
 /* --- PAGE BACKGROUNDS --- */
 #mainbody {
     background-image: linear-gradient(rgba(0,77,33,0.67),rgba(0,77,33,0.67),rgba(0,13,77,0.88)), url(/images/plant.png);
@@ -153,7 +195,11 @@ html, body {
     background-image: linear-gradient(rgba(0,77,120,0.67),rgba(0,55,100,0.67),rgba(0,13,77,0.88)), url(/images/EiffelTower.jpg);
 }
 
-#mainbody, #resourcesbody, #profilebody, #aboutbody {
+#dashboardbody {
+  background-color: #4444bb;
+}
+
+#mainbody, #resourcesbody, #profilebody, #aboutbody, #dashboardbody {
     /* Subtract the header height (approx 60px) from the viewport */
     min-height: calc(100vh - 78.1719px); 
     width: 100%;

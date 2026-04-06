@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
               </li>
               {/* DROPDOWN END */}
               <li><Link href="/about" className="btn">About Us</Link ></li>
+              <li><Link href="/dashboard" className="btn">Dashboard</Link ></li>
               <li><Link href="/profile" className="btn">Profile</Link ></li>
             </ul>
           </nav>
