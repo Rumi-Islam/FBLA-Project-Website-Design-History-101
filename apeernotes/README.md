@@ -1,36 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# APeerNotes
+Website where students can interact with one another and help each other learn. This is designed mainly for the class AP World History: Modern for the initial stages.
 
-## Getting Started
+This website is still under development, so please be mindful of any potential changes!
 
-First, run the development server:
+In the homepage, you can see the calender. The calender holds the dates and times of when people will have a digital lecture, along with a link to our discord server at the bottom.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+We have resources and student resources tabs. What they mean is that the "resources" tab is our own offically posted resources, and the "student resources" tab is the resources other users create.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Have fun, and get those 5s!
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+https://rumi-islam.github.io/FBLA-Project-Website-Design-History-101/
