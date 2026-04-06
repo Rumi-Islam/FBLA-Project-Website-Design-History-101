@@ -1,7 +1,7 @@
 export default function ResourcesPage() {
   return (
     <div className="body" id="resourcesbody">
-      <h1 style={{ textAlign: "center", fontSize: "60px" }}>APeerNotes Resources</h1>
+      <h1 style={{ textAlign: "center", fontSize: "60px"}}>APeerNotes Resources</h1>
 
       {/* Unit 0 */}
       <h1>Unit 0</h1>
