@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import DashboardCard from '../../components/DashboardCard';
 import prisma from '../../../lib/prisma'; // or wherever your prisma client is
 
