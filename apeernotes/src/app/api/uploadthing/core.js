@@ -1,6 +1,6 @@
 import { createUploadthing } from "uploadthing/next";
 import { cookies } from "next/headers";
-import prisma from "@/lib/prisma"; // Adjust path if needed
+import prisma from "../../../../lib/prisma"; 
 
 const f = createUploadthing();
 
@@ -10,16 +10,20 @@ export const ourFileRouter = {
     video: { maxFileSize: "16MB" } 
   })
     .middleware(async () => {
+      // 1. Await cookies to get the store
       const cookieStore = await cookies();
       const userIdString = cookieStore.get("userId")?.value;
       
+      // 2. Check if user is logged in
       if (!userIdString) throw new Error("Unauthorized");
+      
+      // 3. Pass the ID to onUploadComplete
       return { userId: parseInt(userIdString) };
     })
     .onUploadComplete(async ({ metadata, file }) => {
-      // THIS IS THE CRITICAL PART: Save to your DB
       try {
-        await prisma.upload.create({
+        // 4. Save to Database
+        const newUpload = await prisma.upload.create({
           data: {
             fileName: file.name,
             fileUrl: file.url,
@@ -27,9 +31,9 @@ export const ourFileRouter = {
             userId: metadata.userId
           }
         });
-        console.log("Database record created for:", file.name);
+        console.log("Database record created:", newUpload.id);
       } catch (error) {
-        console.error("Failed to save upload to DB:", error);
+        console.error("Prisma Error:", error);
       }
 
       return { uploadedBy: metadata.userId };

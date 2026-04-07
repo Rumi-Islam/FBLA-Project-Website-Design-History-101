@@ -1,21 +1,30 @@
 // src/app/page.js
-export default function Home()
-{
+export default function Home() {
   return (
     <div className="body" id="mainbody">
       <h1 style={{ fontSize: "60px", textAlign: "center", color: "white" }}>APeerNotes</h1>
       <h3 style={{ textAlign: "center", color: "white" }}>Student run, student managed...</h3>
       <p style={{ textAlign: "center", color: "white" }}>Lets have some fun!</p>
       
-      <div style={{ textAlign: "center", color: "white" }}>
-        <a href="/signup" className="btn">Get Started</a>
+      <div style={{ marginBottom: "20px" }}>
       </div>
 
-      <div className="calendar-container">
+      {/* This is the white container fix */}
+      <div className="calendar-container" style={{ 
+        backgroundColor: "white", 
+        padding: "20px", 
+        borderRadius: "12px", 
+        width: "95%", 
+        maxWidth: "1000px", 
+        margin: "0 auto",
+        minHeight: "750px" // Ensures the white box stays open while the calendar loads
+      }}>
         <iframe 
-          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FPhoenix&showPrint=0&title=APeerNotes%20Online%20Lecture%20Sessions&src=MzI2NDRkNzQwZjBmMzFiZTEwNjk4M2M3YTdiMDk1NDdkYWQyYTUzNWU4ZWNiZWFlMTJlNWJiOWQyMGEwMjkxOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23e67c73&color=%230b8043" 
-          id="calendar"
-          style={{ border: 0 }}
+          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ33KMlyUNz8YT_fF0GstBM28y3BMZrNmd_F7OPrpRbjSCEhM0FeZDf6ei3dq3mZZ3BWRiTFdOCk?gv=true" 
+          style={{ border: 0 }} 
+          width="100%" 
+          height="700" 
+          frameBorder="0"
         ></iframe>
       </div>
     </div>

@@ -6,6 +6,10 @@ import { useState } from "react";
 export default function RootLayout({ children }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Add this inside your RootLayout or a useEffect
+console.log("UT ID:", process.env.NEXT_PUBLIC_UPLOADTHING_APP_ID);
+console.log("UT Secret exists:", !!process.env.UPLOADTHING_SECRET);
+
   return (
     <html lang="en">
       <body style={{ margin: 0, padding: 0 }}>
